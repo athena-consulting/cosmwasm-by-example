@@ -41,6 +41,7 @@ pub fn query(_deps: Deps, _env: Env, msg: QueryMsg) -> StdResult<Binary> {
 }
 
 pub fn query_hello_world() -> StdResult<HelloWorldResponse> {
+    // Sets the string in the struct to `HelloWorldResponse` and returns it as respomse to query
     let hello_message = HelloWorldResponse {hello_world_message: "Hello World".to_string()};
     Ok(hello_message)
 }
@@ -55,6 +56,7 @@ mod tests {
 
     #[test]
     fn basic_hello() {
+        /* Testing that query works. */
         let deps = mock_dependencies();
         let env = mock_env();
         let msg = QueryMsg::HelloWorld{};
