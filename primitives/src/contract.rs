@@ -16,7 +16,7 @@ pub fn instantiate(
     deps: DepsMut,
     _env: Env,
     info: MessageInfo,
-    msg: InstantiateMsg,
+    _msg: InstantiateMsg,
 ) -> Result<Response, ContractError> {
     /* Saves the state of the smart contract from the Instantiate Msg */
     let state = State {
@@ -90,10 +90,34 @@ pub mod query {
 
 #[cfg(test)]
 mod tests {
+    use crate::msg::GetIntegerResponse;
+
     use super::*;
     use cosmwasm_std::testing::{mock_dependencies, mock_env, mock_info};
-    use cosmwasm_std::{coins, from_binary};
+    use cosmwasm_std::{from_binary};
 
-    
+    #[test]
+    fn test_owner() {
+        let mut deps = mock_dependencies();
+        let env = mock_env();
+        let info = mock_info("test_address", &[]);
+        let instansiate_msg = InstantiateMsg {};
+        instantiate(deps.as_mut(), env.clone(), info, instansiate_msg).unwrap();
+
+        let query_msg = QueryMsg::GetOwner {  };
+        let resp = query(deps.as_ref(),env.clone(), query_msg).unwrap();
+        let owner_resp: GetOwnerResponse = from_binary(&resp).unwrap();
+        assert_eq!(owner_resp.owner, "test_address")
+    }
+
+    #[test]
+    fn test_integers() {
+        let deps = mock_dependencies();
+        let env = mock_env();
+        let query_msg = QueryMsg::Integer {  };
+        let resp = query(deps.as_ref(),env.clone(), query_msg).unwrap();
+        let int_resp: GetIntegerResponse = from_binary(&resp).unwrap();
+        assert_eq!(int_resp.works, true);
+    }
     }
 
