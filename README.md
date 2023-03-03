@@ -12,3 +12,4 @@ Maintained by Georges Chouchani from [Athena Consulting](https://www.athenaconsu
 - [Counter](https://github.com/athena-consulting/cosmwasm-by-example/tree/main/counter)
 - [Primitives](https://github.com/athena-consulting/cosmwasm-by-example/tree/main/primitives)
 - [Variables](https://github.com/athena-consulting/cosmwasm-by-example/tree/main/variables)
+-  [Instantiation](https://github.com/athena-consulting/cosmwasm-by-example/tree/main/instantiation)
