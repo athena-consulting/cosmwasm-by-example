@@ -5,6 +5,8 @@ The instantiation message and creating a contract.
 The message that is passed to the instantiate function at contract creation.
 
 ```rust
+/// msg.rs
+
 /*
 variables to be passed to contract at instantiation.
 secret variables or any variable that is open to a replay attack should not be 
@@ -17,6 +19,7 @@ pub struct InstantiateMsg {
 ## Instantiate
 The function that is executed when a contract is executed.
 ```rust
+/// contract.rs
 pub fn instantiate(
     deps: DepsMut,
     _env: Env,

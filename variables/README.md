@@ -5,6 +5,7 @@ Introduction to state and global variables in Cosmwasm and how to access them.
 Global structures that allow access to global variables on the blockchain and reading/writing data to blockchain storage. 
 
 ```rust
+// contract.rs
 pub fn instantiate(
     /* Deps allows to access:
     1. Read/Write Storage Access
@@ -44,6 +45,7 @@ pub fn instantiate(
 State variables are variables that are meant to be stored in the blockchain. 
 
 ```rust
+// state.rs
 pub struct State {
     /* Count is a state variable which means that the data will be stored on the blockchain*/
     pub count: i32,

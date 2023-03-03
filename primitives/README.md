@@ -32,6 +32,7 @@ pub fn integers(_deps: Deps) -> StdResult<GetIntegerResponse> {
 `info.sender` is a global variable that represents infromation on the address signing/sending the transaction.
 
 ```rust
+// contract.rs
 pub fn instantiate(
     deps: DepsMut,
     _env: Env,
@@ -57,6 +58,7 @@ pub fn instantiate(
 `Addr` is a Cosmwasm-std primitive that allows developers to verify that strings represent possible valid addresses.
 
 ```rust
+// state.rs
 pub struct State {
     /* Addr is a cosmwasm-std primitive that helps validate addresses on the Cosmos ecosystem,
      a wrapper for a string that also validates the address in use. */
