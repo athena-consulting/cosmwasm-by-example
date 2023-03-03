@@ -11,4 +11,4 @@ Maintained by Georges Chouchani from [Athena Consulting](https://www.athenaconsu
 - [Hello World](https://github.com/athena-consulting/cosmwasm-by-example/tree/main/hello-world)
 - [Counter](https://github.com/athena-consulting/cosmwasm-by-example/tree/main/counter)
 - [Primitives](https://github.com/athena-consulting/cosmwasm-by-example/tree/main/primitives)
-
+- [Variables](https://github.com/athena-consulting/cosmwasm-by-example/tree/main/variables)
