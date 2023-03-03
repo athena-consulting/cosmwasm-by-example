@@ -6,6 +6,7 @@ Increment function changes the count state variable and pushes the state to bloc
 
 ```rust
 // contract.rs
+
     pub fn increment(deps: DepsMut) -> Result<Response, ContractError> {
         STATE.update(deps.storage, |mut state| -> Result<_, ContractError> {
             state.count += 1;
@@ -21,6 +22,7 @@ Query functions load the state from the blockchain and outputs a state variable 
 
 ```rust
 // contract.rs
+
     pub fn count(deps: Deps) -> StdResult<GetCountResponse> {
         let state = STATE.load(deps.storage)?;
         Ok(GetCountResponse { count: state.count })

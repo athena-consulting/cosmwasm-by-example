@@ -5,6 +5,8 @@ Early introduction to some primitive variables in Cosmwasm and how they work.
 Cosmwasm has wrappers around unsigned integers in Rust for better JSON rust encoding and decoding. 
 
 ```rust 
+// contract.rs
+
 pub fn integers(_deps: Deps) -> StdResult<GetIntegerResponse> {
         /* Uint family in cosmwasm are thin wrappers around unsigned integers in Rust that uses strings for JSON encoding and decoding
         Uint64 is the smallest Uint among the group and
@@ -33,6 +35,7 @@ pub fn integers(_deps: Deps) -> StdResult<GetIntegerResponse> {
 
 ```rust
 // contract.rs
+
 pub fn instantiate(
     deps: DepsMut,
     _env: Env,
@@ -59,6 +62,7 @@ pub fn instantiate(
 
 ```rust
 // state.rs
+
 pub struct State {
     /* Addr is a cosmwasm-std primitive that helps validate addresses on the Cosmos ecosystem,
      a wrapper for a string that also validates the address in use. */
