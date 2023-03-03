@@ -15,4 +15,12 @@ pub enum ExecuteMsg {}
 
 #[cw_serde]
 #[derive(QueryResponses)]
-pub enum QueryMsg {}
+pub enum QueryMsg {
+    #[returns(GetMessageResponse)]
+    GetMessage {}
+}
+
+#[cw_serde]
+pub struct GetMessageResponse {
+    pub message: String
+}
