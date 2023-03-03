@@ -104,6 +104,8 @@ pub mod query {
 
 #[cfg(test)]
 mod tests {
+    use crate::msg::GetBlockResponse;
+
     use super::*;
     use cosmwasm_std::testing::{mock_dependencies, mock_env, mock_info};
     use cosmwasm_std::{coins, from_binary};
@@ -142,6 +144,19 @@ mod tests {
         let res = query(deps.as_ref(), mock_env(), QueryMsg::GetCount {}).unwrap();
         let value: GetCountResponse = from_binary(&res).unwrap();
         assert_eq!(18, value.count);
+    }
+
+    #[test]
+    fn block() {
+        let deps = mock_dependencies();
+        let env = mock_env();
+
+        // should increase counter by 1
+        let res = query(deps.as_ref(), mock_env(), QueryMsg::GetBlock {}).unwrap();
+        let value: GetBlockResponse = from_binary(&res).unwrap();
+        assert_eq!(env.block.height, value.height);
+        assert_eq!(env.block.time.seconds(), value.time);
+
     }
 
 }
