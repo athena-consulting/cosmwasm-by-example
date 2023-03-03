@@ -20,7 +20,7 @@ pub fn instantiate(
 ) -> Result<Response, ContractError> {
     /* Saves the state of the smart contract from the Instantiate Msg */
     let state = State {
-        /* Info.sender is a global function variable that explains  */
+        /* Info.sender is a global function variable that explains who is the signer of a message. */
         owner: info.sender.clone(),
     };
     set_contract_version(deps.storage, CONTRACT_NAME, CONTRACT_VERSION)?;
