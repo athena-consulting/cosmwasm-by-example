@@ -13,3 +13,4 @@ Maintained by Georges Chouchani from [Athena Consulting](https://www.athenaconsu
 - [Primitives](https://github.com/athena-consulting/cosmwasm-by-example/tree/main/primitives)
 - [Variables](https://github.com/athena-consulting/cosmwasm-by-example/tree/main/variables)
 -  [Instantiation](https://github.com/athena-consulting/cosmwasm-by-example/tree/main/instantiation)
+-  [Send Tokens](https://github.com/athena-consulting/cosmwasm-by-example/tree/main/send-tokens)
