@@ -4,8 +4,8 @@ The goal is making it easier to allow developers to start working and understand
 Complexity of the examples increase gradually with initial examples made just to explain Cosmwasm basics. <br>
 <br>
 <br>
-Inspired by [Solidity By Example](https://www.solidity-by-example.org). <br>
-Maintained by Georges Chouchani from [Athena Consulting](https://www.athenaconsulting.io).
+:bulb: Inspired by [Solidity By Example](https://www.solidity-by-example.org). <br>
+:building_construction: Maintained by Georges Chouchani from [Athena Consulting](https://www.athenaconsulting.io).
 ## List of Examples
 ### Introduction to Cosmwasm
 - [Hello World](https://github.com/athena-consulting/cosmwasm-by-example/tree/main/hello-world)
