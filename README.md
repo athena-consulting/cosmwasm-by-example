@@ -5,7 +5,7 @@ Complexity of the examples increase gradually with initial examples made just to
 <br>
 <br>
 :bulb: Inspired by [Solidity By Example](https://www.solidity-by-example.org). <br>
-:building_construction: Maintained by Georges Chouchani from [Athena Consulting](https://www.athenaconsulting.io).
+:building_construction: Maintained by Georges Chouchani from [Athena Consulting](https://www.athenaconsulting.io). <br>
 ![alt text](https://drive.google.com/file/d/1U8fDeZkbfjvEseStaFxp2j-DOzjJAqyN/view?usp=sharing)
 ## List of Examples
 ### :one: Introduction to Cosmwasm
