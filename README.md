@@ -5,10 +5,8 @@ Complexity of the examples increase gradually with initial examples made just to
 <br>
 <br>
 :bulb: Inspired by [Solidity By Example](https://www.solidity-by-example.org). <br>
-:building_construction: Maintained by [Athena Consulting](https://www.athenaconsulting.io). <br>
-
-Athena Consulting has been awarded a grant for building and maintaining Cosmwasm by Example's Github repository and website by the [ATOM Accelerator DAO](https://www.atomaccelerator.com/). <br>
-
+:building_construction: Maintained by Georges Chouchani from [Athena Consulting](https://www.athenaconsulting.io).
+![alt text](https://drive.google.com/file/d/1U8fDeZkbfjvEseStaFxp2j-DOzjJAqyN/view?usp=sharing)
 ## List of Examples
 ### :one: Introduction to Cosmwasm
 - [Hello World](https://github.com/athena-consulting/cosmwasm-by-example/tree/main/hello-world)
