@@ -20,4 +20,4 @@ Athena Consulting has been awarded a grant by [Atom Accelerator DAO](https://www
 - [Variables](https://github.com/athena-consulting/cosmwasm-by-example/tree/main/variables)
 -  [Instantiation](https://github.com/athena-consulting/cosmwasm-by-example/tree/main/instantiation)
 -  [Send Tokens](https://github.com/athena-consulting/cosmwasm-by-example/tree/main/send-tokens)    
-- [Reading and Writing From State](https://github.com/athena-consulting/cosmwasm-by-example/tree/main/send-tokens)
+- [Reading and Writing From State](https://github.com/athena-consulting/cosmwasm-by-example/tree/main/read-write-state)
