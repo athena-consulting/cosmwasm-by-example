@@ -11,7 +11,8 @@ After the function use case is completed (in that case empty), we add a bank mes
         Ok(Response::new().add_attribute("action", "send")
         /* Sending tokens is part of the response of a function
         Developer creates a BankMsg to send tokens to an address with a specific native token
-        Will fail if smart contract does not have this much tokens initially  */
+        Will fail if smart contract does not have this much tokens initially.
+        If a function raises an error before reaching the response, then no funds are sent.  */
         .add_message(BankMsg::Send { to_address: to.into_string(), amount: vec![Coin{denom, amount}] }))
     }
 ```
