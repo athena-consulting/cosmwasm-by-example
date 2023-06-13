@@ -1,0 +1,49 @@
+name: Push cosmwasm-by-example to cbe_backend
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  push-to-parent:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout submodule repository
+        uses: actions/checkout@v2
+
+      - name: Configure Git
+        run: |
+          git config --global user.name "{{ secrets.USER_NAME }}"
+          git config --global user.email "{{ secrets.USER_EMAIL }}"
+          
+      - name: Set up SSH key
+        run: |
+          mkdir -p ~/.ssh/
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan github.com >> ~/.ssh/known_hosts
+          
+      - name: Clone parent repository
+        run: |
+          git clone git@github.com:athena-consulting/cbe_backend.git cbe_backend
+        working-directory: .
+
+      - name: Copy submodule code to parent repository
+        run: |
+          ls
+          find . -maxdepth 1 \( ! -name 'cbe_backend' -a ! -name '.github' \) -type d -exec cp -r {} cbe_backend/cosmwasm-by-example/ \;
+        working-directory: .
+
+      - name: Commit and push changes to parent repository
+        run: |
+          cd cbe_backend/cosmwasm-by-example
+          ls -a
+          rm -rf .github cbe_backend
+          ls -a
+          cd ..
+          git add .
+          git commit -m "Update submodule"
+          git push origin dev  # Replace with the branch name of the parent repository
+        working-directory: .
