@@ -272,7 +272,7 @@ pub fn execute_burn(
     info: MessageInfo,
     amount: Uint128,
 ) -> Result<Response, ContractError> {
-    // lower balance
+    // lower balance of the sendr
     BALANCES.update(
         deps.storage,
         &info.sender,
@@ -280,7 +280,7 @@ pub fn execute_burn(
             Ok(balance.unwrap_or_default().checked_sub(amount)?)
         },
     )?;
-    // reduce total_supply
+    // reduce total_supply, hence destroying the tokens
     TOKEN_INFO.update(deps.storage, |mut info| -> StdResult<_> {
         info.total_supply = info.total_supply.checked_sub(amount)?;
         Ok(info)

@@ -25,3 +25,4 @@ Athena Consulting has been awarded a grant by [Atom Accelerator DAO](https://www
 
 ### :two: Example Smart Contracts
 - [CW20 Base](https://github.com/athena-consulting/cosmwasm-by-example/tree/main/cw20-base)
+- [CW20 Escrow](https://github.com/athena-consulting/cosmwasm-by-example/tree/main/cw20-escrow)
