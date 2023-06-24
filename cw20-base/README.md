@@ -211,3 +211,5 @@ pub fn execute_update_minter(
         ))
 }
 ```
+# Credits
+Credits to Ethan Frey for writing a basic implementation of a CosmWasm-20 compliant token.
