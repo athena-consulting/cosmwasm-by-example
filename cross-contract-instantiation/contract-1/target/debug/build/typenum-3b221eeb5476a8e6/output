@@ -1,0 +1,3 @@
+cargo:rerun-if-changed=build/main.rs
+cargo:rustc-env=TYPENUM_BUILD_CONSTS=/data/home/CrossContractCosmWasm/cosmwasm_poc/cosmwasm-poc/target/debug/build/typenum-3b221eeb5476a8e6/out/consts.rs
+cargo:rustc-env=TYPENUM_BUILD_OP=/data/home/CrossContractCosmWasm/cosmwasm_poc/cosmwasm-poc/target/debug/build/typenum-3b221eeb5476a8e6/out/op.rs
