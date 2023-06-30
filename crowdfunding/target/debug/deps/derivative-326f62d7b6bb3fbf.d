@@ -1,0 +1,16 @@
+/data/home/cw-kickstarter/target/debug/deps/libderivative-326f62d7b6bb3fbf.so: /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/derivative-2.2.0/src/lib.rs /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/derivative-2.2.0/src/ast.rs /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/derivative-2.2.0/src/attr.rs /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/derivative-2.2.0/src/bound.rs /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/derivative-2.2.0/src/clone.rs /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/derivative-2.2.0/src/cmp.rs /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/derivative-2.2.0/src/debug.rs /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/derivative-2.2.0/src/default.rs /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/derivative-2.2.0/src/hash.rs /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/derivative-2.2.0/src/matcher.rs /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/derivative-2.2.0/src/paths.rs /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/derivative-2.2.0/src/utils.rs
+
+/data/home/cw-kickstarter/target/debug/deps/derivative-326f62d7b6bb3fbf.d: /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/derivative-2.2.0/src/lib.rs /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/derivative-2.2.0/src/ast.rs /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/derivative-2.2.0/src/attr.rs /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/derivative-2.2.0/src/bound.rs /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/derivative-2.2.0/src/clone.rs /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/derivative-2.2.0/src/cmp.rs /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/derivative-2.2.0/src/debug.rs /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/derivative-2.2.0/src/default.rs /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/derivative-2.2.0/src/hash.rs /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/derivative-2.2.0/src/matcher.rs /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/derivative-2.2.0/src/paths.rs /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/derivative-2.2.0/src/utils.rs
+
+/home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/derivative-2.2.0/src/lib.rs:
+/home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/derivative-2.2.0/src/ast.rs:
+/home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/derivative-2.2.0/src/attr.rs:
+/home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/derivative-2.2.0/src/bound.rs:
+/home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/derivative-2.2.0/src/clone.rs:
+/home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/derivative-2.2.0/src/cmp.rs:
+/home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/derivative-2.2.0/src/debug.rs:
+/home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/derivative-2.2.0/src/default.rs:
+/home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/derivative-2.2.0/src/hash.rs:
+/home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/derivative-2.2.0/src/matcher.rs:
+/home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/derivative-2.2.0/src/paths.rs:
+/home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/derivative-2.2.0/src/utils.rs:
