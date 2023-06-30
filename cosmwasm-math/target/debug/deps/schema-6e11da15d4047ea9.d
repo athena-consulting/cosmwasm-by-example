@@ -1,6 +1,6 @@
-/data/home/cosmwasm-by-example/cosmwasm_math/target/debug/deps/schema-6e11da15d4047ea9.rmeta: src/bin/schema.rs
+/data/home/cosmwasm-by-example/cosmwasm-math/target/debug/deps/schema-6e11da15d4047ea9.rmeta: src/bin/schema.rs
 
-/data/home/cosmwasm-by-example/cosmwasm_math/target/debug/deps/schema-6e11da15d4047ea9.d: src/bin/schema.rs
+/data/home/cosmwasm-by-example/cosmwasm-math/target/debug/deps/schema-6e11da15d4047ea9.d: src/bin/schema.rs
 
 src/bin/schema.rs:
 

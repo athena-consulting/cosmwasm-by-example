@@ -15,7 +15,7 @@ use crate::msg::{ExecuteMsg, InstantiateMsg, OperationListResponse, QueryMsg};
 use crate::state::{Operation, OperationStatus, Timelock, CONFIG, OPERATION_LIST, OPERATION_SEQ};
 
 // version info for migration info
-const CONTRACT_NAME: &str = "crates.io:cw3-timelock";
+const CONTRACT_NAME: &str = "crates.io:timelock";
 const CONTRACT_VERSION: &str = env!("CARGO_PKG_VERSION");
 
 #[cfg_attr(not(feature = "library"), entry_point)]
