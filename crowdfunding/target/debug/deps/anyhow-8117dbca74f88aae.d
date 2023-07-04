@@ -1,0 +1,15 @@
+/data/home/cw-kickstarter/target/debug/deps/anyhow-8117dbca74f88aae.rmeta: /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/anyhow-1.0.57/src/lib.rs /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/anyhow-1.0.57/src/backtrace.rs /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/anyhow-1.0.57/src/chain.rs /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/anyhow-1.0.57/src/context.rs /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/anyhow-1.0.57/src/ensure.rs /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/anyhow-1.0.57/src/error.rs /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/anyhow-1.0.57/src/fmt.rs /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/anyhow-1.0.57/src/kind.rs /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/anyhow-1.0.57/src/macros.rs /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/anyhow-1.0.57/src/ptr.rs /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/anyhow-1.0.57/src/wrapper.rs
+
+/data/home/cw-kickstarter/target/debug/deps/anyhow-8117dbca74f88aae.d: /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/anyhow-1.0.57/src/lib.rs /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/anyhow-1.0.57/src/backtrace.rs /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/anyhow-1.0.57/src/chain.rs /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/anyhow-1.0.57/src/context.rs /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/anyhow-1.0.57/src/ensure.rs /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/anyhow-1.0.57/src/error.rs /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/anyhow-1.0.57/src/fmt.rs /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/anyhow-1.0.57/src/kind.rs /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/anyhow-1.0.57/src/macros.rs /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/anyhow-1.0.57/src/ptr.rs /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/anyhow-1.0.57/src/wrapper.rs
+
+/home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/anyhow-1.0.57/src/lib.rs:
+/home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/anyhow-1.0.57/src/backtrace.rs:
+/home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/anyhow-1.0.57/src/chain.rs:
+/home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/anyhow-1.0.57/src/context.rs:
+/home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/anyhow-1.0.57/src/ensure.rs:
+/home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/anyhow-1.0.57/src/error.rs:
+/home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/anyhow-1.0.57/src/fmt.rs:
+/home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/anyhow-1.0.57/src/kind.rs:
+/home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/anyhow-1.0.57/src/macros.rs:
+/home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/anyhow-1.0.57/src/ptr.rs:
+/home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/anyhow-1.0.57/src/wrapper.rs:

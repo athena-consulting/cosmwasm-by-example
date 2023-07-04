@@ -1,0 +1,13 @@
+/data/home/cosmwasm by example/english-auction/royality-cw721/target/debug/deps/url-b82943e61ecd9fb1.rmeta: /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/url-2.4.0/src/lib.rs /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/url-2.4.0/src/host.rs /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/url-2.4.0/src/origin.rs /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/url-2.4.0/src/parser.rs /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/url-2.4.0/src/path_segments.rs /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/url-2.4.0/src/slicing.rs /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/url-2.4.0/src/quirks.rs
+
+/data/home/cosmwasm by example/english-auction/royality-cw721/target/debug/deps/liburl-b82943e61ecd9fb1.rlib: /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/url-2.4.0/src/lib.rs /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/url-2.4.0/src/host.rs /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/url-2.4.0/src/origin.rs /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/url-2.4.0/src/parser.rs /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/url-2.4.0/src/path_segments.rs /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/url-2.4.0/src/slicing.rs /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/url-2.4.0/src/quirks.rs
+
+/data/home/cosmwasm by example/english-auction/royality-cw721/target/debug/deps/url-b82943e61ecd9fb1.d: /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/url-2.4.0/src/lib.rs /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/url-2.4.0/src/host.rs /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/url-2.4.0/src/origin.rs /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/url-2.4.0/src/parser.rs /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/url-2.4.0/src/path_segments.rs /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/url-2.4.0/src/slicing.rs /home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/url-2.4.0/src/quirks.rs
+
+/home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/url-2.4.0/src/lib.rs:
+/home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/url-2.4.0/src/host.rs:
+/home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/url-2.4.0/src/origin.rs:
+/home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/url-2.4.0/src/parser.rs:
+/home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/url-2.4.0/src/path_segments.rs:
+/home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/url-2.4.0/src/slicing.rs:
+/home/user/.cargo/registry/src/github.com-1ecc6299db9ec823/url-2.4.0/src/quirks.rs:
