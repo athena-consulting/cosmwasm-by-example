@@ -12,7 +12,6 @@ The contract can be instantiated with the following messages
 {
     "token1_denom": {"cw20": "<CONTRACT_ADDRESS>"},
     "token2_denom": {"cw20": "<CONTRACT_ADDRESS>"},
-    "lp_token_code_id": '<CW20_CODE_ID>'
 }
 ```
 
