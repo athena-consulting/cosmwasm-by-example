@@ -56,12 +56,10 @@ fn create_amm(
     protocol_fee_recipient: String,
 ) -> Addr {
     // set up amm contract
-    let cw20_id = router.store_code(contract_cw20());
     let amm_id = router.store_code(contract_amm());
     let msg = InstantiateMsg {
         token1_denom,
         token2_denom,
-        lp_token_code_id: cw20_id,
         owner: Some(owner.to_string()),
         lp_fee_percent,
         protocol_fee_percent,
@@ -152,12 +150,10 @@ fn test_instantiate() {
     // Test instantiation with invalid fee amount
     let lp_fee_percent = Decimal::from_str("1.01").unwrap();
     let protocol_fee_percent = Decimal::zero();
-    let cw20_id = router.store_code(contract_cw20());
     let amm_id = router.store_code(contract_amm());
     let msg = InstantiateMsg {
         token1_denom: Denom::Native(NATIVE_TOKEN_DENOM.into()),
         token2_denom: Denom::Cw20(cw20_token.addr()),
-        lp_token_code_id: cw20_id,
         owner: Some(owner.to_string()),
         lp_fee_percent,
         protocol_fee_percent,
