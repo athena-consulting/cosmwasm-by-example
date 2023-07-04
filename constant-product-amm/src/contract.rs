@@ -15,10 +15,10 @@ use crate::msg::{
     ExecuteMsg, FeeResponse, InfoResponse, InstantiateMsg, QueryMsg, Token1ForToken2PriceResponse,
     Token2ForToken1PriceResponse, TokenSelect,
 };
-use crate::state::{Fees, Token, FEES, FROZEN, OWNER, TOKEN1, TOKEN2, TOTAL_STORED};
+use crate::state::{Fees, Token, FEES, FROZEN, OWNER, TOKEN1, TOKEN2};
 
 // Version info for migration info
-pub const CONTRACT_NAME: &str = "crates.io:wasmswap";
+pub const CONTRACT_NAME: &str = "crates.io:product-amm";
 pub const CONTRACT_VERSION: &str = env!("CARGO_PKG_VERSION");
 
 const FEE_SCALE_FACTOR: Uint128 = Uint128::new(10_000);
@@ -70,9 +70,7 @@ pub fn instantiate(
 
     // Depositing is not frozen by default
     FROZEN.save(deps.storage, &false)?;
-
-    TOTAL_STORED.save(deps.storage,&Uint128::zero())?;
-
+    
     Ok(Response::new().add_attribute("key", "instantiate"))
 }
 
@@ -193,10 +191,7 @@ pub fn execute_add_liquidity(
     let token1 = TOKEN1.load(deps.storage)?;
     let token2 = TOKEN2.load(deps.storage)?;
 
-    let mut token_supply = TOTAL_STORED.load(deps.storage)?;
     let liquidity_amount = token1_amount+token2_amount;
-    token_supply+=liquidity_amount;
-    TOTAL_STORED.save(deps.storage, &token_supply)?;
 
     if liquidity_amount < min_liquidity {
         return Err(ContractError::MinLiquidityError {
@@ -321,9 +316,9 @@ pub fn execute_remove_liquidity(
     check_expiration(&expiration, &env.block)?;
 
 
-    let total_token_supply = TOTAL_STORED.load(deps.storage)?;
     let token1 = TOKEN1.load(deps.storage)?;
     let token2 = TOKEN2.load(deps.storage)?;
+    let total_token_supply = token1.reserve+token2.reserve;
 
     if amount > total_token_supply {
         return Err(ContractError::InsufficientLiquidityError {
@@ -592,7 +587,6 @@ pub fn query(deps: Deps, _env: Env, msg: QueryMsg) -> StdResult<Binary> {
 pub fn query_info(deps: Deps) -> StdResult<InfoResponse> {
     let token1 = TOKEN1.load(deps.storage)?;
     let token2 = TOKEN2.load(deps.storage)?;
-    let total=TOTAL_STORED.load(deps.storage)?;
   
     // TODO get total supply
     Ok(InfoResponse {
@@ -600,7 +594,6 @@ pub fn query_info(deps: Deps) -> StdResult<InfoResponse> {
         token1_denom: token1.denom,
         token2_reserve: token2.reserve,
         token2_denom: token2.denom,
-        total_tokens:total,
        
     })
 }

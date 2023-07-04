@@ -86,7 +86,6 @@ pub struct InfoResponse {
     pub token1_denom: Denom,
     pub token2_reserve: Uint128,
     pub token2_denom: Denom,
-    pub total_tokens: Uint128,
 }
 
 #[derive(Serialize, Deserialize, Clone, Debug, Eq, PartialEq, JsonSchema)]

@@ -5,8 +5,6 @@ use cosmwasm_std::{Addr, Decimal, Uint128};
 use cw20::Denom;
 use cw_storage_plus::Item;
 
-pub const TOTAL_STORED: Item<Uint128> = Item::new("total");
-
 #[derive(Serialize, Deserialize, Clone, Debug, PartialEq, JsonSchema)]
 pub struct Token {
     pub reserve: Uint128,

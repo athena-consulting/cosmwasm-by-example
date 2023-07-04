@@ -1,4 +1,4 @@
-# WasmSwap
+# Constant Product Automatic Market Maker(AMM)
 
 This contract is an Constant product automatic market maker (AMM) for the cosmwasm smart contract engine.
 This contract allows you to swap tokens. Liquidity providers can add liquidity to the market and receive a 0.03% fee on every transaction.
