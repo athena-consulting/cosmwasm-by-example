@@ -9,6 +9,7 @@ use cw20::{Denom, Expiration};
 pub struct InstantiateMsg {
     pub token1_denom: Denom,
     pub token2_denom: Denom,
+    pub lp_token_code_id: u64,
     pub owner: Option<String>,
     pub protocol_fee_recipient: String,
     // NOTE: Fees percents are out of 100 e.g., 1 = 1%

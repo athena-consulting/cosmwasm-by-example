@@ -5,6 +5,7 @@ use cosmwasm_std::{Addr, Decimal, Uint128};
 use cw20::Denom;
 use cw_storage_plus::Item;
 
+
 #[derive(Serialize, Deserialize, Clone, Debug, PartialEq, JsonSchema)]
 pub struct Token {
     pub reserve: Uint128,

@@ -1,6 +1,6 @@
 use cosmwasm_std::{
     attr, entry_point, to_binary, Addr, Binary, BlockInfo, CosmosMsg, Decimal, Deps, DepsMut,
-    Env, MessageInfo, Response, StdError, StdResult, Uint128, Uint256, Uint512,
+    Env, MessageInfo, Response, StdError, StdResult, Uint128, Uint256,
     WasmMsg,
 };
 use cw2::set_contract_version;
@@ -18,7 +18,7 @@ use crate::msg::{
 use crate::state::{Fees, Token, FEES, FROZEN, OWNER, TOKEN1, TOKEN2};
 
 // Version info for migration info
-pub const CONTRACT_NAME: &str = "crates.io:product-amm";
+pub const CONTRACT_NAME: &str = "crates.io:sum-amm";
 pub const CONTRACT_VERSION: &str = env!("CARGO_PKG_VERSION");
 
 const FEE_SCALE_FACTOR: Uint128 = Uint128::new(10_000);
@@ -70,7 +70,7 @@ pub fn instantiate(
 
     // Depositing is not frozen by default
     FROZEN.save(deps.storage, &false)?;
-    
+
     Ok(Response::new().add_attribute("key", "instantiate"))
 }
 
@@ -318,6 +318,7 @@ pub fn execute_remove_liquidity(
 
     let token1 = TOKEN1.load(deps.storage)?;
     let token2 = TOKEN2.load(deps.storage)?;
+
     let total_token_supply = token1.reserve+token2.reserve;
 
     if amount > total_token_supply {
@@ -326,6 +327,7 @@ pub fn execute_remove_liquidity(
             available: total_token_supply,
         });
     }
+
 
     let token1_amount = amount
         .checked_mul(token1.reserve)
@@ -433,28 +435,20 @@ fn get_input_price(
     input_amount: Uint128,
     input_reserve: Uint128,
     output_reserve: Uint128,
-    fee_percent: Decimal,
+    _fee_percent: Decimal,
 ) -> StdResult<Uint128> {
     if input_reserve == Uint128::zero() || output_reserve == Uint128::zero() {
         return Err(StdError::generic_err("No liquidity"));
     };
 
-    let fee_percent = fee_decimal_to_uint128(fee_percent)?;
-    let fee_reduction_percent = FEE_SCALE_FACTOR - fee_percent;
-    let input_amount_with_fee = Uint512::from(input_amount.full_mul(fee_reduction_percent));
-    let numerator = input_amount_with_fee
-        .checked_mul(Uint512::from(output_reserve))
-        .map_err(StdError::overflow)?;
-    let denominator = Uint512::from(input_reserve)
-        .checked_mul(Uint512::from(FEE_SCALE_FACTOR))
-        .map_err(StdError::overflow)?
-        .checked_add(input_amount_with_fee)
-        .map_err(StdError::overflow)?;
-
-    Ok(numerator
-        .checked_div(denominator)
-        .map_err(StdError::divide_by_zero)?
-        .try_into()?)
+   let k= input_reserve.checked_add(output_reserve).map_err(StdError::overflow)?;
+   let new_input_reserve=input_reserve.checked_add(input_amount).map_err(StdError::overflow)?;
+   let new_output_reserve=k.checked_sub(new_input_reserve).map_err(StdError::overflow)?;
+   let output_amount=output_reserve.checked_sub(new_output_reserve).map_err(StdError::overflow)?;
+   let fee=output_amount.checked_mul(Uint128::new(3).checked_div(Uint128::new(100)).map_err(StdError::divide_by_zero)?).map_err(StdError::overflow)?;
+   let new_output_amount=output_amount-fee;
+   Ok(new_output_amount)
+   
 }
 
 fn get_protocol_fee_amount(input_amount: Uint128, fee_percent: Decimal) -> StdResult<Uint128> {
@@ -655,7 +649,7 @@ mod tests {
 
     #[test]
     fn test_get_input_price() {
-        let fee_percent = Decimal::from_str("0.3").unwrap();
+        let fee_percent = Decimal::from_str("0.03").unwrap();
         // Base case
         assert_eq!(
             get_input_price(
@@ -665,7 +659,7 @@ mod tests {
                 fee_percent
             )
             .unwrap(),
-            Uint128::new(9)
+            Uint128::new(10)
         );
 
         // No input reserve error
