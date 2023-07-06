@@ -1,0 +1,34 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  test_and_deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up SSH
+        uses: webfactory/ssh-agent@v0.5.1
+        with:
+          ssh-private-key: ${{ secrets.SSH_KEY_ACCESS }}
+            
+      - name: Update code on server
+        run: |
+          ssh -o StrictHostKeyChecking=no ubuntu@ec2-3-67-194-66.eu-central-1.compute.amazonaws.com << EOF
+            cd cbe_backend
+            git submodule update
+          EOF
+
+
+      - name: Deploy to EC2 instance
+        run: |
+          ssh -o StrictHostKeyChecking=no ubuntu@ec2-3-67-194-66.eu-central-1.compute.amazonaws.com << EOF
+            cd cbe_backend
+            sudo docker compose up --build -d
+          EOF
