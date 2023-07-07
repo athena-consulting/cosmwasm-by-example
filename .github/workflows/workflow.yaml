@@ -21,8 +21,8 @@ jobs:
       - name: Update code on server
         run: |
           ssh -o StrictHostKeyChecking=no ubuntu@ec2-3-67-194-66.eu-central-1.compute.amazonaws.com << EOF
-            cd cbe_backend
-            git submodule update
+            cd cbe_backend/cosmwaswm-by-example
+            git pull --recurse-submodules
           EOF
 
 
