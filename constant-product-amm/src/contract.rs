@@ -655,7 +655,7 @@ mod tests {
 
     #[test]
     fn test_get_input_price() {
-        let fee_percent = Decimal::from_str("0.3").unwrap();
+        let fee_percent = Decimal::from_str("0.03").unwrap();
         // Base case
         assert_eq!(
             get_input_price(
