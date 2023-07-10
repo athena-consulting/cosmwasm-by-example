@@ -20,7 +20,7 @@ jobs:
             
       - name: Update code on server
         run: |
-          ssh -o StrictHostKeyChecking=no ubuntu@ec2-3-122-53-3eu-central-1.compute.amazonaws.com << EOF
+          ssh -o StrictHostKeyChecking=no ubuntu@ec2-3-122-53-3.eu-central-1.compute.amazonaws.com << EOF
             cd cbe_backend/cosmwasm-by-example
             git pull --recurse-submodules
           EOF
@@ -28,7 +28,7 @@ jobs:
 
       - name: Deploy to EC2 instance
         run: |
-          ssh -o StrictHostKeyChecking=no ubuntu@ec2-3-122-53-3eu-central-1.compute.amazonaws.com << EOF
+          ssh -o StrictHostKeyChecking=no ubuntu@ec2-3-122-53-3.eu-central-1.compute.amazonaws.com << EOF
             cd cbe_backend
             sudo docker compose up --build -d
           EOF
