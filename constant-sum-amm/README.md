@@ -1,7 +1,7 @@
 # Constant Sum Automatic Market Maker(AMM)
 
 This contract is an Constant sum automatic market maker (AMM) for the cosmwasm smart contract engine.
-This contract allows you to swap tokens. Liquidity providers can add liquidity to the market and receive a 0.03% fee on every transaction.
+This contract allows you to swap tokens. Liquidity providers can add liquidity to the market and receive a certain fee on every transaction that is set on instantiation.
 The code also includes various error handling and validation checks to ensure the correctness and security of the operations.
 
 The constant sum market maker (CSMM), which is ideal for zero-price-impact trades but does not provide infinite liquidity. CSMMs follow the formula x+y=k, which creates a straight line when plotted. This design unfortunately allows arbitrageurs to drain one of the reserves if the off-chain reference price between the tokens is not 1:1. Such a situation would destroy one side of the liquidity pool, leaving all of the liquidity residing in just one of the assets and therefore leaving no more liquidity for traders. Because of this, CSMM is a model rarely used by AMMs.
