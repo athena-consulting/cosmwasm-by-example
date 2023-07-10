@@ -316,7 +316,7 @@ fn test_pass_through_swap() {
         Uint128::new(5000),
     );
 
-    let lp_fee_percent = Decimal::from_str("0.3").unwrap();
+    let lp_fee_percent = Decimal::from_str("0.03").unwrap();
     let protocol_fee_percent = Decimal::zero();
     let amm = create_amm(
         &mut router,
