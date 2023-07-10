@@ -1,7 +1,7 @@
 # Constant Product Automatic Market Maker(AMM)
 
 This contract is an Constant product automatic market maker (AMM) for the cosmwasm smart contract engine.
-This contract allows you to swap tokens. Liquidity providers can add liquidity to the market and receive a 0.03% fee on every transaction.
+This contract allows you to swap tokens. Liquidity providers can add liquidity to the market and receive a certain fee on every transaction that is set on instantiation.
 The code also includes various error handling and validation checks to ensure the correctness and security of the operations.
 
 The constant product market maker (CPMM), which was popularized by the first AMM-based DEX, Bancor. CPMMs are based on the function x*y=k, which establishes a range of prices for two tokens according to the available quantities (liquidity) of each token. When the supply of token X increases, the token supply of Y must decrease, and vice-versa, to maintain the constant product K. When plotted, the result is a hyperbola where liquidity is always available but at increasingly higher prices, which approach infinity at both ends.
