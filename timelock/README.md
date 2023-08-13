@@ -1,26 +1,34 @@
+# Timelock 🔒
 
-# Timelock
-Timelock is a smart contract designed to delay execute-function calls on other smart contracts with a predetermined minimum time delay. Though it's not strictly a MultiSig/Voting Contract, Timelock follows the footsteps of CW3-spec compliant contracts in the sense that no address can immediately execute, but only propose/schedule an arbitrary operation, before a delayed, final execution can occur.
+**Timelock** is a smart contract that introduces a delay mechanism for executing function calls on other smart contracts. It establishes a predefined minimum time delay before a scheduled operation can be executed.
 
-Instantiating the Timelock contract involves setting up a minimum, contract-wide, default time delay, as well as specifying the addresses to act as Administrators and Proposers.
+While Timelock is not strictly a MultiSig/Voting Contract, it aligns closely with the principles of CW3-spec compliant contracts. Instead of immediate execution, addresses can only propose or schedule operations, which then undergo a delay before final execution is allowed.
 
-* The designated minimum time delay for the Timelock contract ensures that operations can only be scheduled by the proposers if their execution time is further in the future than the amount of this delay.
+## Key Features 🌟
 
+- **Instantiation**: Upon deploying the Timelock contract, you can set:
+  - A minimum, contract-wide, default time delay.
+  - Addresses to act as Administrators and Proposers.
 
-* The administrators are responsible for the initial configuration of the Timelock contract, as well as testing its compatibility with potential target contracts.
-  * If the administrator list is left empty, by default, the address by which the Timelock contract is instantiated will be set as an administrator.
-  * Once the list of proposers and the minimum time delay of the contract is agreed upon and finalized (upon instantiation or later on by the administrators), the administrators are expected to freeze the Timelock contract to ascertain that no future alterations can be made on the final configuration.
-  * Freezing the Timelock contract is irrevocable and may potentially render the contract practically unusable.
+- **Time Delay Mechanism**: 
+  - Operations can only be scheduled by proposers if their execution time exceeds the set delay.
 
+- **Administrators**:
+  - Handle initial configuration and ensure compatibility with potential target contracts.
+  - By default, the contract initiator becomes the administrator if no other addresses are provided.
+  - Post configuration, administrators can freeze the Timelock, making it immutable. This action is irrevocable and can render the contract unusable.
 
-* The proposers are in charge of scheduling operations that will pass through the Timelock delay mechanism.
-  * A Timelock contract should have the necessary rights on target contracts for scheduled operations to be executed successfully.
-  * While scheduling an operation, proposers can specify a list of executor addresses that will be in charge of executing the scheduled operation once the execution time for that particular operation is reached. Executing operations trigger the embedded execute-function call on the target contract as a final step.
-  * If the list of executors is left empty by the proposer, any address can execute the scheduled operation once the execution time arrives, by default.
+- **Proposers**:
+  - Schedule operations to be executed after the delay.
+  - Ensure that the Timelock contract has necessary permissions on target contracts.
+  - Specify executor addresses responsible for the final operation execution on the target contract.
+  - If no executors are specified, any address can execute once the time arrives.
 
-It is important to note that while the Timelock contract is designed to delay execute-function calls, scheduling operations does not guarantee their execution on target contracts per se, considering the fact that a scheduled operation can still be cancelled by the original proposer address before its execution. Therefore, the list of proposers should be carefully contemplated upon before setting up a Timelock contract and freezing its configuration variables.
+- **Note**: Scheduling doesn't guarantee execution. Scheduled operations can be cancelled by the proposer before execution. Thus, choosing proposers is crucial.
 
-## Instantiate
+## Contract Structures 🛠
+
+### Instantiate
 ```rust
 pub struct InstantiateMsg {
   pub admins: Option<Vec<String>>,
@@ -28,7 +36,36 @@ pub struct InstantiateMsg {
   pub min_delay: Duration,
 }
 ```
-## Execute
+
+### Query 
+```rust
+pub enum QueryMsg {
+  GetOperationStatus {
+    operation_id: Uint64,
+  },
+
+  GetExecutionTime {
+    operation_id: Uint64,
+  },
+
+  GetAdmins {},
+
+  GetOperations {
+    start_after: Option<u64>,
+    limit: Option<u32>,
+  },
+
+  GetMinDelay {},
+
+  GetProposers {},
+
+  GetExecutors {
+    operation_id: Uint64,
+  },
+}
+```
+
+### Execute 
 ```rust
 pub enum ExecuteMsg {
   Schedule {
@@ -66,32 +103,5 @@ pub enum ExecuteMsg {
 
   Freeze {},
 }
-```
 
-## Query
-```rust
-pub enum QueryMsg {
-  GetOperationStatus {
-    operation_id: Uint64,
-  },
-
-  GetExecutionTime {
-    operation_id: Uint64,
-  },
-
-  GetAdmins {},
-
-  GetOperations {
-    start_after: Option<u64>,
-    limit: Option<u32>,
-  },
-
-  GetMinDelay {},
-
-  GetProposers {},
-
-  GetExecutors {
-    operation_id: Uint64,
-  },
-}
 ```
