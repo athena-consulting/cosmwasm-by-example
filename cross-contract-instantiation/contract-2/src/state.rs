@@ -1,0 +1,1 @@
+// As this was a dummy contract to initialize another contract so state.rs is left empty
