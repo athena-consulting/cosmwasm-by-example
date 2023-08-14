@@ -22,6 +22,7 @@ jobs:
         run: |
           ssh -o StrictHostKeyChecking=no ubuntu@ec2-3-122-53-3.eu-central-1.compute.amazonaws.com << EOF
             cd cbe_backend/cosmwasm-by-example
+            git config pull.rebase false
             git pull --recurse-submodules
           EOF
 
