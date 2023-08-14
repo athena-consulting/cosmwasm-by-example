@@ -4,6 +4,13 @@ This repository contains the implementation of the English-Auction contract, whi
 
 ---
 
+## Introduction to English Auctions
+English auctions, often recognized as open ascending price auctions, represent one of the most commonly utilized methods for selling an item or service. In this type of auction, the process begins with the auctioneer announcing a suggested opening bid, a minimum price for the item. Bidders then raise their bids sequentially, competing to offer a higher price than the last announced bid. The auction proceeds with rising prices until no participant is willing to bid higher. The participant who has made the highest bid wins the item and pays the announced price.
+
+Distinct from other auction formats, English auctions are transparent – bidders are aware of the competing bids and can adjust their strategies in real-time. This transparency not only fosters competitive bidding but also ensures that the winning bid is very close to the true market value of the item. English auctions are extensively employed for selling art, antiques, collectibles, and even in some electronic markets.
+
+In the realm of digital assets and tokens, the English auction methodology can be harnessed to achieve fair market values, especially when the value of the asset is uncertain or highly volatile. The transparent nature of the auction helps bidders gain insights into the perceived value of the asset by the market participants.
+
 ## Features
 
 The Auction-English contract provides the following features:

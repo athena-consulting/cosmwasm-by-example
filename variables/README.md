@@ -1,39 +1,43 @@
-# Variables
-Introduction to state and global variables in Cosmwasm and how to access them.
+# **Variables in Cosmwasm**
 
-## Deps, Env and Info 
-Global structures that allow access to global variables on the blockchain and reading/writing data to blockchain storage. 
+An overview of state and global variables within Cosmwasm and methods to access them.
+
+## **1. Deps, Env, and Info**
+
+These are global structures that provide access to the blockchain's global variables, enabling read/write operations to the blockchain storage.
 
 ```rust
 // contract.rs
 
 pub fn instantiate(
-    /* Deps allows to access:
-    1. Read/Write Storage Access
-    2. General Blockchain APIs
-    3. The Querier to the blockchain (raw data queries) */
+    /* Deps provides:
+       1. Read/Write Storage Access
+       2. General Blockchain APIs
+       3. Querier to the blockchain (raw data queries) */
     deps: DepsMut,
-    /* env gives access to global variables which represent environment information.
-    For exaample: 
-    - Block Time/Height
-    - contract address
-    - Transaction Info */
+
+    /* env grants access to environment information, such as:
+       - Block Time/Height
+       - Contract address
+       - Transaction Info */
     _env: Env,
-    /* Message Info gives access to information used for authorization.
-    1. Funds sent with the message.
-    2. The message sender (signer). */
+
+    /* MessageInfo provides information for authorization, like:
+       1. Funds accompanying the message.
+       2. The sender (signer) of the message. */
     info: MessageInfo,
     msg: InstantiateMsg,
 ) -> Result<Response, ContractError> {
-    /* Instantiating the state that will be stored to the blockchain */
+    /* Initializing the state to be stored on the blockchain. */
     let state = State {
         count: msg.count,
-        /* info.sender is the address of the signer of the message and is stored in this instance in storage as the owner of the contract
-        (which is used for access control to smart contract functions) */
+        /* info.sender is the address of the signer of the message. 
+           Here, it's stored as the contract owner for access control purposes. */
         owner: info.sender.clone(),
     };
+
     set_contract_version(deps.storage, CONTRACT_NAME, CONTRACT_VERSION)?;
-    // Save the stete in deps.storage which creates a storage for contract data on the blockchain. 
+    // Storing the state in deps.storage establishes a space for contract data on the blockchain.
     STATE.save(deps.storage, &state)?;
 
     Ok(Response::new()
@@ -42,15 +46,14 @@ pub fn instantiate(
 }
 ```
 
-## State Variables
-State variables are variables that are meant to be stored in the blockchain. 
+## **2. State Variables**
+State variables are designed to be stored on the blockchain, ensuring data permanence and security.
 
 ```rust
 // state.rs
 
 pub struct State {
-    /* Count is a state variable which means that the data will be stored on the blockchain*/
+    /* 'count' is a state variable, signifying its storage on the blockchain. */
     pub count: i32,
     pub owner: Addr,
 }
-```
