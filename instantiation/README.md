@@ -1,41 +1,41 @@
-# Instantiation
-The instantiation message and creating a contract.
+# **Smart Contract Initialization**
 
-## InstantiateMsg
-The message that is passed to the instantiate function at contract creation.
+This document elucidates the instantiation process of a smart contract. It discusses the `InstantiateMsg` structure passed during contract creation and the `instantiate` function that runs upon contract execution.
+
+## **1. InstantiateMsg: Initialization Message**
+
+`InstantiateMsg` houses the variables provided when the contract gets instantiated. Ensure sensitive data prone to replay attacks isn't incorporated.
 
 ```rust
 /// msg.rs
 
-/*
-variables to be passed to contract at instantiation.
-secret variables or any variable that is open to a replay attack should not be 
-part of the InstantiateMsg 
-*/
+/// Variables for contract instantiation.
+/// Exclude variables susceptible to replay attacks or secret data.
 pub struct InstantiateMsg {
-    pub sent_message: String
+    pub sent_message: String,
 }
 ```
-## Instantiate
-The function that is executed when a contract is executed.
+
+## **2. Instantiate: Contract Execution
+
+On contract creation, the instantiate function activates. It sets the initial state of the smart contract, conducts necessary checks, and can function akin to an execute message.
+
 ```rust
 /// contract.rs
+
 pub fn instantiate(
     deps: DepsMut,
     _env: Env,
     _info: MessageInfo,
     msg: InstantiateMsg,
 ) -> Result<Response, ContractError> {
-    /* Code is executed at contract creation
-    Used to set initial (default) state variables of the smart contract
-    Can perform checks and acts like an execute message.
-     */
+    // Initialize contract's state.
     let state = State {
-        global_var: msg.sent_message
+        global_var: msg.sent_message,
     };
-    // Pushes the data to blockchain storage
+    // Save state to the blockchain.
     STATE.save(deps.storage, &state)?;
-    Ok(Response::new()
-    .add_attribute("instantiated", "true"))
+    Ok(Response::new().add_attribute("instantiated", "true"))
 }
+
 ```
