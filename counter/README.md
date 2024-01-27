@@ -1,5 +1,5 @@
 # Counter
-Counter default smart contract that allows incrementing and reseting a counter.
+Counter default smart contract that allows incrementing and resetting a counter.
 
 ## Changing State Variable
 Increment function changes the count state variable and pushes the state to blockchain storage.
