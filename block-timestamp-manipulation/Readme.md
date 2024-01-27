@@ -1,4 +1,4 @@
-# Block Timestamp Manupulation
+# Block Timestamp Manipulation
 
 The objective of this cosmwasm contract is to provide a comprehensive understanding of the block timestamp, and how they can be used to perform an attack on a DeFi project. We will define the term and elaborate on its workings, examining its potential consequences for the blockchain ecosystem.
 
@@ -31,7 +31,7 @@ use crate::msg::{ExecuteMsg, InstantiateMsg};
 use crate::state::PREVIOUS_BLOCK_TIME;
 
 // version info for migration info
-const CONTRACT_NAME: &str = "crates.io:block-timestamp-manupulation";
+const CONTRACT_NAME: &str = "crates.io:block-timestamp-manipulation";
 const CONTRACT_VERSION: &str = env!("CARGO_PKG_VERSION");
 
 #[cfg_attr(not(feature = "library"), entry_point)]

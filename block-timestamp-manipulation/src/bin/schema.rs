@@ -1,6 +1,6 @@
 use cosmwasm_schema::write_api;
 
-use block_timestamp_manupulation::msg::{ExecuteMsg, InstantiateMsg, QueryMsg};
+use block_timestamp_manipulation::msg::{ExecuteMsg, InstantiateMsg, QueryMsg};
 
 fn main() {
     write_api! {

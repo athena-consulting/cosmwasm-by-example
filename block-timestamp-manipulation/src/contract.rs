@@ -8,7 +8,7 @@ use crate::msg::{ExecuteMsg, InstantiateMsg};
 use crate::state::PREVIOUS_BLOCK_TIME;
 
 // version info for migration info
-const CONTRACT_NAME: &str = "crates.io:block-timestmp-manupulation";
+const CONTRACT_NAME: &str = "crates.io:block-timestmp-manipulation";
 const CONTRACT_VERSION: &str = env!("CARGO_PKG_VERSION");
 
 #[cfg_attr(not(feature = "library"), entry_point)]
