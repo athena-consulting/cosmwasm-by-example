@@ -101,8 +101,8 @@ mod tests {
         let mut deps = mock_dependencies();
         let env = mock_env();
         let info = mock_info("test_address", &[]);
-        let instansiate_msg = InstantiateMsg {};
-        instantiate(deps.as_mut(), env.clone(), info, instansiate_msg).unwrap();
+        let instantiate_msg = InstantiateMsg {};
+        instantiate(deps.as_mut(), env.clone(), info, instantiate_msg).unwrap();
 
         let query_msg = QueryMsg::GetOwner {  };
         let resp = query(deps.as_ref(),env.clone(), query_msg).unwrap();
