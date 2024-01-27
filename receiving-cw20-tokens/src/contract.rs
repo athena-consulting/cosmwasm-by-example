@@ -10,7 +10,7 @@ use crate::msg::{ExecuteMsg, InstantiateMsg, QueryMsg};
 use crate::state::*;
 
 // version info for migration info
-const CONTRACT_NAME: &str = "crates.io:recieve-cw20-tokens";
+const CONTRACT_NAME: &str = "crates.io:receive-cw20-tokens";
 const CONTRACT_VERSION: &str = env!("CARGO_PKG_VERSION");
 
 #[cfg_attr(not(feature = "library"), entry_point)]
@@ -203,7 +203,7 @@ fn test_execute_receive() {
     };
     let msg=ExecuteMsg::Receive(wrapper);
 
-    // As recieve will be directly called by cw20 contract so in info we will have cw20 address stored rather than an user address
+    // As receive will be directly called by cw20 contract so in info we will have cw20 address stored rather than an user address
     // abcdef is cw20 address
     let info = mock_info("abcdef", &[]);
 

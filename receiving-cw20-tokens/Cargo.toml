@@ -1,5 +1,5 @@
 [package]
-name = "recieving-cw20-tokens"
+name = "receiving-cw20-tokens"
 version = "0.1.0"
 edition = "2021"
 

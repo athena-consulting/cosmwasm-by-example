@@ -115,7 +115,7 @@ A user can win all of the funds stotred in the contract if they submit a transac
 
 In `state.rs` we have declared a constant global variable `PREVIOUS_BLOCK_TIME`, which is used to keep track of the block timestamp required in the contract.
 
-During Instantiating of contract we have made the function to recieve funds during instantiation of the contract.
+During Instantiating of contract we have made the function to receive funds during instantiation of the contract.
 
 Inside `Guess` function which calls `execute_guess` we have conditional statements that states that the caller of the contract needs to send `2 "earth"` coins and another one which states there can't be more than 1 transaction originating from this contract at a given time.
 
