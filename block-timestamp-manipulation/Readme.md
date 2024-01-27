@@ -1,4 +1,4 @@
-# Block Timestamp Manupulation
+# Block Timestamp Manipulation
 
 The objective of this cosmwasm contract is to provide a comprehensive understanding of the block timestamp, and how they can be used to perform an attack on a DeFi project. We will define the term and elaborate on its workings, examining its potential consequences for the blockchain ecosystem.
 
@@ -31,7 +31,7 @@ use crate::msg::{ExecuteMsg, InstantiateMsg};
 use crate::state::PREVIOUS_BLOCK_TIME;
 
 // version info for migration info
-const CONTRACT_NAME: &str = "crates.io:block-timestamp-manupulation";
+const CONTRACT_NAME: &str = "crates.io:block-timestamp-manipulation";
 const CONTRACT_VERSION: &str = env!("CARGO_PKG_VERSION");
 
 #[cfg_attr(not(feature = "library"), entry_point)]
@@ -115,7 +115,7 @@ A user can win all of the funds stotred in the contract if they submit a transac
 
 In `state.rs` we have declared a constant global variable `PREVIOUS_BLOCK_TIME`, which is used to keep track of the block timestamp required in the contract.
 
-During Instantiating of contract we have made the function to recieve funds during instantiation of the contract.
+During Instantiating of contract we have made the function to receive funds during instantiation of the contract.
 
 Inside `Guess` function which calls `execute_guess` we have conditional statements that states that the caller of the contract needs to send `2 "earth"` coins and another one which states there can't be more than 1 transaction originating from this contract at a given time.
 

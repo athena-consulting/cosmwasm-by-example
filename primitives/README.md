@@ -31,7 +31,7 @@ pub fn integers(_deps: Deps) -> StdResult<GetIntegerResponse> {
 ```
 
 ## Info.sender
-`info.sender` is a global variable that represents infromation on the address signing/sending the transaction.
+`info.sender` is a global variable that represents information on the address signing/sending the transaction.
 
 ```rust
 // contract.rs

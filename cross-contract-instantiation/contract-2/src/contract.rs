@@ -73,7 +73,7 @@ mod tests {
         let info = mock_info("creator", &coins(2, "token"));
         let _res = instantiate(deps.as_mut(), mock_env(), info, msg).unwrap();
 
-        // INstantiating another contract
+        // Instantiating another contract
         let info = mock_info("anyone", &coins(2, "token"));
         let msg = ExecuteMsg::Instantiate {};
         let _res = execute(deps.as_mut(), mock_env(), info.clone(), msg).unwrap();
