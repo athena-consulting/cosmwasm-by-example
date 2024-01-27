@@ -16,7 +16,7 @@ pub struct InstantiateMsg {
 }
 ```
 
-## **2. Instantiate: Contract Execution
+## **2. Instantiate: Contract Execution**
 
 On contract creation, the instantiate function activates. It sets the initial state of the smart contract, conducts necessary checks, and can function akin to an execute message.
 
