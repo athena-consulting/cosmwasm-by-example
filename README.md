@@ -34,6 +34,7 @@ Athena Consulting has been awarded a grant by [Atom Accelerator DAO](https://www
 - [Dutch Auction](https://github.com/athena-consulting/cosmwasm-by-example/tree/main/dutch-auction)
 - [English Auction](https://github.com/athena-consulting/cosmwasm-by-example/tree/main/english-auction)
 - [TimeLock Contract](https://github.com/athena-consulting/cosmwasm-by-example/tree/main/timelock)
+- [Native Tip Jar](https://github.com/athena-consulting/cosmwasm-by-example/tree/main/native-tip-jar)
 - [Crowdfunding Contract](https://github.com/athena-consulting/cosmwasm-by-example/tree/main/crowdfunding)
 - [Token Vault](https://github.com/athena-consulting/cosmwasm-by-example/tree/main/token-vault)
 
