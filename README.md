@@ -36,6 +36,7 @@ Athena Consulting has been awarded a grant by [Atom Accelerator DAO](https://www
 - [TimeLock Contract](https://github.com/athena-consulting/cosmwasm-by-example/tree/main/timelock)
 - [Crowdfunding Contract](https://github.com/athena-consulting/cosmwasm-by-example/tree/main/crowdfunding)
 - [Token Vault](https://github.com/athena-consulting/cosmwasm-by-example/tree/main/token-vault)
+- [Height Reminders](https://github.com/athena-consulting/cosmwasm-by-example/tree/main/height-reminders)
 
 ### :three: Complex Applications
 - [Constant Product AMM](https://github.com/athena-consulting/cosmwasm-by-example/tree/main/constant-product-amm)
